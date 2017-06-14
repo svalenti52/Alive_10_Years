@@ -1,10 +1,8 @@
 /** \file newton2.cpp
- *
+ * \brief What is probability of throwing 4 heads before 7 tails varying
+ * the fairness of the coin?
+ * \date 28-Apr-2017.
  */
-
-//
-// Created by svalenti on 4/28/2017.
-//
 
 #include <iostream>
 #include <random>

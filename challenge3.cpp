@@ -1,9 +1,8 @@
 /** \file challenge3.cpp
- *
+ * \brief What is the probability of a rod, with two random breaks in it,
+ * having all it sides less than half the original length?
+ * \date 28-May-2017.
  */
-
-// Created by svalenti on 4/28/2017.
-//
 
 #include <iostream>
 #include <random>

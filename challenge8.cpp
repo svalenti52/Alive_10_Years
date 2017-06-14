@@ -1,10 +1,13 @@
 /** \file challenge8.cpp
+ * \brief Probability of any team in a league of 6, all equal ability,
+ * winning championship 3 years in a row.
+ * \date 30-May-2017.
  *
+ * \details A team winning a championship 3 years in a row gets to
+ * retire the trophy permanently. The main problem is determining how
+ * many years are required before the probability reaches one-half that
+ * the trophy is retired. Calculate also for 10 teams as well as 6.
  */
-
-// challenge8.cpp
-// Created by svalenti on 4/28/2017.
-//
 
 #include <iostream>
 #include <random>
@@ -42,7 +45,7 @@ int main(int argc, char** argv)
             seasons_till_3.push_back(uid(dre));
         }
         if ( seasons_till_3.size() > 300 ) histogram.increment_bucket(300);
-        else histogram.increment_bucket(seasons_till_3.size());
+        else histogram.increment_bucket(static_cast<int>(seasons_till_3.size()));
     }
 
     cout << "Expected number of games till 3 in a row = "

@@ -1,10 +1,8 @@
 /** \file challenge1.cpp
- *
+ * \brief Out of the legitimate triangles formed by the random breaking of
+ * a rod in two places, how many are obtuse?
+ * \date 28-May-2017.
  */
-
-// challenge1.cpp
-// Created by svalenti on 4/28/2017.
-//
 
 #include <iostream>
 #include <random>

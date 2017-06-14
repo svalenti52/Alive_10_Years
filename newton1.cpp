@@ -1,10 +1,9 @@
 /** \file newton1.cpp
+ * \brief How many rolls till two consecutive sixes appear?
+ * \date 28-Apr-2017.
  *
+ * \details
  */
-
-//
-// Created by svalenti on 4/28/2017.
-//
 
 #include <iostream>
 #include <random>
@@ -19,7 +18,7 @@ int main(int argc, char** argv)
 
     dre.seed(0);
 
-    const int nr_trials = 1'000'000;
+    const int nr_trials = 10'000'000;
 
     double cumulative_value = 0.0;
 
@@ -29,7 +28,7 @@ int main(int argc, char** argv)
         int current_value = urd(dre); // roll 2
         int jx;
 
-        for ( jx = 2; jx < 10'000'000; ++jx ) {
+        for ( jx = 2; jx < nr_trials; ++jx ) {
             if ( current_value == 6 && current_value == prior_value ) break;
             else {
                 prior_value = current_value;
