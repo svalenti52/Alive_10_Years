@@ -13,7 +13,7 @@
 
 #include <iostream>
 #include <random>
-#include <val/histogram/histogram.h>
+#include <val/montecarlo/Histogram.h>
 #include <deque>
 #include <val/montecarlo/MonteCarloSim.h>
 #include <val/util.h>
@@ -24,11 +24,9 @@ using DIST = DistributionType;
 
 int main(int argc, char** argv)
 {
-    if ( argc != 2 ) { cout << "usage: ./a <nr of teams>\n"; return 1; }
-    int max = atoi(argv[1]);
 
-    default_random_engine dre;
-    uniform_int_distribution<int> uid(1,max);
+    if ( argc != 2 ) { cout << "usage: ./a <nr of teams>\n"; return 1; }
+    const int max = atoi(argv[1]);
 
     Histogram<int, int> histogram(2, 300, 1);
 
@@ -55,7 +53,7 @@ int main(int argc, char** argv)
     monteCarloSimulation(1'000'000,
                             condition_met,
                             1, 6, 0, 1,
-                            1, 6, 3, 1);
+                            1, max, 3, 1);
 
 
     StopWatch stopWatch;
