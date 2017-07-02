@@ -1,16 +1,18 @@
-/** \file newton3.cpp
- * \brief Three Player Game, A, B, C, A rolls first, B second;
+/** 
+ * \file newton3.cpp
+ * \brief Three Player Dice Game: A, B, C; A rolls first, B second;
  * roll six, then out of game.
  * \date 28-Apr-2017
  *
  * \details What is the probability of first A, then B tossing a 6?
  * What is the probability of first B, then A tossing a 6?
  * (Just concerned with order, not consecutive 6s.)
+ * The probability of winning as C is the sum of the above
+ * two probabilities.
  */
 
 #include <iostream>
 #include <random>
-//#include <boost/circular_buffer.hpp>
 #include <deque>
 
 using namespace std;

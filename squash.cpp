@@ -1,8 +1,9 @@
-//
-// Created by svalenti on 5/25/2017.
-//
-
-// squash.cpp
+/**
+ * \file squash.cpp
+ * \date 25-May-2017
+ * 
+ * \brief Probability of server winning a game of squash.
+ */
 
 #include <iostream>
 #include <Eigen/Dense>

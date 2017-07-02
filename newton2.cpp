@@ -27,7 +27,7 @@ int main(int argc, char** argv)
         int nr_tails = 0;
 
         for ( int jx = 0; jx < 10; ++jx ) {
-            ++(urd(dre) < 0.45 ? nr_heads : nr_tails); // 0.5 is a fair coin
+            ++(urd(dre) < 0.5 ? nr_heads : nr_tails); // 0.5 is a fair coin
             if ( nr_heads == 4 || nr_tails == 7 ) break;
         }
 

@@ -1,10 +1,12 @@
-/** \file twins.cpp
+/**
+ * \file twins.cpp
+ * \date 28-April-2017
+ *
+ * \brief 20 students divided into 5 groups of 4; probability that twins
+ * in the class will be in the same group.
+ *
  *
  */
-
-//
-// Created by svalenti on 4/28/2017.
-//
 
 #include <iostream>
 #include <random>
@@ -32,7 +34,7 @@ int main(int argc, char** argv)
 
         for ( int jx = 0; jx < 20; jx += 4 )
             if ( any_of(students.begin()+jx, students.begin()+jx+4, [](int i) {return i == 1;}) &&
-                 any_of(students.begin()+jx, students.begin()+jx+4, [](int i) {return i == 2;})) {
+                 any_of(students.begin()+jx, students.begin()+jx+4, [](int i) {return i == 2;}) ) {
                 cumulative_value += 1.0;
                 break;
             }

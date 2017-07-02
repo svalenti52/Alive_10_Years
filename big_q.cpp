@@ -1,14 +1,12 @@
-/** \file big_q.cpp
- *
+/**
+ * \file big_q.cpp
+ * \date 28-Apr-2017
  */
-//
-// Created by svalenti on 4/28/2017.
-//
 
 #include <iostream>
 #include <random>
 #include <algorithm>
-#include <tuple>
+#include <val/util.h>
 
 using namespace std;
 
@@ -26,9 +24,11 @@ int main(int argc, char** argv)
 
     double cumulative_value = 0.0;
 
+    StopWatch stopWatch;
+
     for (int ix = 0; ix<nr_trials; ++ix) {
         vector<double> values;
-        for ( int ix = 0; ix < N; ++ix )
+        for ( int jx = 0; jx < N; ++jx )
             values.push_back(urd(dre));
 
         auto pr = minmax_element(values.begin(), values.end());
@@ -41,6 +41,8 @@ int main(int argc, char** argv)
 
     cout << "Probability > " << k << " is = " << cumulative_value/static_cast<double>(nr_trials)
          << " out of " << N << " random values\n";
+
+    stopWatch.stop();
 
     return 0;
 }

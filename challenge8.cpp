@@ -1,4 +1,5 @@
-/** \file challenge8.cpp
+/**
+ * \file challenge8.cpp
  * \brief Probability of any team in a league of 6, all equal ability,
  * winning championship 3 years in a row.
  * \date 30-May-2017.
@@ -11,6 +12,7 @@
 
 #include <iostream>
 #include <random>
+#include <val/histogram/histogram.h>
 #include <val/util.h>
 
 using namespace std;
@@ -22,6 +24,7 @@ int main(int argc, char** argv)
 
     default_random_engine dre;
     uniform_int_distribution<int> uid(1,max);
+
     dre.seed(1);
 
     const int nr_trials = 1'000'000;
@@ -30,6 +33,8 @@ int main(int argc, char** argv)
 
     integral_histogram histogram(3, 300);
 
+    StopWatch stopWatch;
+    
     for (int ix = 0; ix<nr_trials; ++ix) {
 
         vector<int> seasons_till_3 { uid(dre), uid(dre), uid(dre) };
@@ -48,6 +53,8 @@ int main(int argc, char** argv)
         else histogram.increment_bucket(static_cast<int>(seasons_till_3.size()));
     }
 
+    stopWatch.stop();
+    
     cout << "Expected number of games till 3 in a row = "
          << cumulative_value/static_cast<double>(nr_trials) << '\n';
 
