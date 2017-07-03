@@ -12,6 +12,7 @@
  */
 
 #include <iostream>
+#include <fstream>
 #include <random>
 #include <val/montecarlo/Histogram.h>
 #include <deque>
@@ -28,10 +29,12 @@ int main(int argc, char** argv)
     if ( argc != 2 ) { cout << "usage: ./a <nr of teams>\n"; return 1; }
     const int max = atoi(argv[1]);
 
-    Histogram<int, int> histogram(2, 300, 1);
+    int max_nr_seasons_tracked = 300;
 
-    auto condition_met = [&histogram](Distribution<int, DIST::UniformIntegral>& pd,
-            Distribution<int, DIST::UniformIntegral_Deque>& latest_three_seasons,
+    Histogram<int, int> histogram(2, max_nr_seasons_tracked, 1);
+
+    auto condition_met = [&histogram, max_nr_seasons_tracked](Distribution<int, DIST::UniformIntegral>& pd,
+            Distribution<int, DIST::UniformIntegral>& latest_three_seasons,
             double& nr_of_seasons) -> bool {
 
         nr_of_seasons = 3.0;
@@ -42,14 +45,15 @@ int main(int argc, char** argv)
             latest_three_seasons.events.pop_front();
             latest_three_seasons.add_random_value_to_end();
         }
-        if ( nr_of_seasons > 300.0 ) histogram.increment_bucket(300);
+        if ( nr_of_seasons >static_cast<double>(max_nr_seasons_tracked))
+            histogram.increment_bucket(max_nr_seasons_tracked);
         else histogram.increment_bucket(static_cast<int>(nr_of_seasons));
 
         latest_three_seasons.reload_random_values();
         return true;
     };
 
-    MonteCarloSimulation<int, int, DIST::UniformIntegral, DIST::UniformIntegral_Deque>
+    MonteCarloSimulation<int, int, DIST::UniformIntegral, DIST::UniformIntegral>
     monteCarloSimulation(1'000'000,
                             condition_met,
                             1, 6, 0, 1,
@@ -67,7 +71,9 @@ int main(int argc, char** argv)
     cout << "Approximate location of 50% probability at "
          << histogram.get_midpoint() << " seasons\n";
 
-    std::cout << histogram << '\n';
+    std::ofstream histogram_file("/home/graph/histogram.txt");
+
+    histogram_file << histogram << '\n';
 
     return 0;
 }

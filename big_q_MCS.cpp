@@ -2,6 +2,10 @@
  * \file big_q_MCS.cpp
  * \date 26-Jun-2017
  *
+ * \brief From Random Unit Interval set, choose numerator N to be max, denominator D to be min
+ * so N/D is largest from set.
+ *
+ * \detail Probability that N/D is larger than parametrized number.
  */
 
 #include <val/util.h>
@@ -11,6 +15,7 @@
 using DIST = DistributionType;
 
 int main(int argc, char** argv) {
+
 
     const double k = atof(argv[1]);
     const int N = atoi(argv[2]);

@@ -12,25 +12,31 @@
 
 #include <val/montecarlo/MonteCarloSim.h>
 #include <algorithm>
+#include <val/util.h>
 
 int main() {
 
-    auto condition_met = [](Distribution<int, DistributionType::BernoulliIntegral>& pd,
+    auto condition_met = [](Distribution<bool, DistributionType::BernoulliIntegral>& pd,
             Distribution<int, DistributionType::UniformIntegral>& sd,
             double& iv) {
 
-        return std::count(pd.events.begin(), pd.events.end(), 1) >= 4;
+        return std::count(pd.events.begin(), pd.events.end(), true) >= 4;
     };
 
-    MonteCarloSimulation<int, int, DistributionType::BernoulliIntegral, DistributionType::UniformIntegral> monteCarloSimulation(
+    MonteCarloSimulation<bool, int, DistributionType::BernoulliIntegral, DistributionType::UniformIntegral>
+            monteCarloSimulation(
             10'000'000,
             condition_met,
-            15, 40, 10, 1, ///> for the Bernoulli Distribution use first two parameters as Q and D to form Q/D
+            1, 2, 10, 1, ///> for the Bernoulli Distribution use first two parameters as Q and D to form Q/D
             0, 1, 0, 2   ///> continued, this Q/D should give a probability that is used as an input for
                          ///> for the distribution
     );
 
+    StopWatch stopWatch;
+
     monteCarloSimulation.run();
+
+    stopWatch.stop();
 
     monteCarloSimulation.print_result();
 }

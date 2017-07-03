@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <random>
+#include <val/util.h>
 
 using namespace std;
 
@@ -21,6 +22,8 @@ int main(int argc, char** argv)
     const int nr_trials = 10'000'000;
 
     double cumulative_value = 0.0;
+
+    StopWatch stopWatch;
 
     for (int ix = 0; ix<nr_trials; ++ix) {
 
@@ -38,6 +41,8 @@ int main(int argc, char** argv)
 
         cumulative_value += static_cast<double>(jx);
     }
+
+    stopWatch.stop();
 
     cout << "Expected number of rolls is = " << cumulative_value/static_cast<double>(nr_trials) << '\n';
 
