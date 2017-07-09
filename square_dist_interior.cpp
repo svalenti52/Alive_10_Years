@@ -1,11 +1,12 @@
-/** \file square_dist_interior.cpp
+/**
+ * \file square_dist_interior.cpp
  * \brief
  *
  */
 
 #include <iostream>
 #include <random>
-#include <val/util.h>
+#include <val/montecarlo/Chronology.h>
 
 using namespace std;
 

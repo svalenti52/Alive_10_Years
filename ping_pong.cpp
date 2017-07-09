@@ -1,4 +1,5 @@
-/** \file ping_pong.cpp
+/**
+ * \file ping_pong.cpp
  *
  */
 

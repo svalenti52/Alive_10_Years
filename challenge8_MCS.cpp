@@ -17,7 +17,7 @@
 #include <val/montecarlo/Histogram.h>
 #include <deque>
 #include <val/montecarlo/MonteCarloSim.h>
-#include <val/util.h>
+#include <val/montecarlo/Chronology.h>
 
 using namespace std;
 
@@ -46,8 +46,8 @@ int main(int argc, char** argv)
             latest_three_seasons.add_random_value_to_end();
         }
         if ( nr_of_seasons >static_cast<double>(max_nr_seasons_tracked))
-            histogram.increment_bucket(max_nr_seasons_tracked);
-        else histogram.increment_bucket(static_cast<int>(nr_of_seasons));
+            histogram.increment_bin(max_nr_seasons_tracked);
+        else histogram.increment_bin(static_cast<int>(nr_of_seasons));
 
         latest_three_seasons.reload_random_values();
         return true;

@@ -12,8 +12,8 @@
 
 #include <iostream>
 #include <random>
-#include <val/histogram/histogram.h>
-#include <val/util.h>
+#include <val/montecarlo/Histogram.h>
+#include <val/montecarlo/Chronology.h>
 
 using namespace std;
 
