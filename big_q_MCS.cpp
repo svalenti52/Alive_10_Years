@@ -5,7 +5,7 @@
  * \brief From Random Unit Interval set, choose numerator N to be max, denominator D to be min
  * so N/D is largest from set.
  *
- * \detail Probability that N/D is larger than parametrized number.
+ * \details Probability that N/D is larger than parametrized number.
  */
 
 #include <val/montecarlo/Chronology.h>
@@ -20,8 +20,9 @@ int main(int argc, char** argv) {
     const double k = atof(argv[1]);
     const int N = atoi(argv[2]);
 
+    Distribution<double, DIST::UniformReal> distribution(0.0, 1.0, N);
+
     auto condition_met = [k](Distribution<double, DIST::UniformReal>& random_Qvals,
-            Distribution<double, DIST::UniformReal>& sd,
             double& iv) -> bool { ///> condition met?
 
         ///> iv defaults to 1.0
@@ -31,11 +32,10 @@ int main(int argc, char** argv) {
         return ( *pr.second / *pr.first ) > k;
     };
 
-    MonteCarloSimulation<double, double, DIST::UniformReal, DIST::UniformReal> monteCarloSimulation(
+    MonteCarloSimulation_alpha<double, double, DIST::UniformReal> monteCarloSimulation(
             10'000'000,
             condition_met,
-            0.0, 1.0, N, 4,
-            0.0, 1.0, 0, 2);
+            distribution);
 
     StopWatch stopWatch;
 
