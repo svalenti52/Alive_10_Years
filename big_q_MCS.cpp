@@ -9,10 +9,10 @@
  */
 
 #include <val/montecarlo/Chronology.h>
-#include <val/montecarlo/MonteCarloSim.h>
+#include <val/montecarlo/MonteCarloSim_beta.h>
 #include <algorithm>
 
-using DIST = DistributionType;
+using REAL_DISTRIBUTION = Distribution<double, double, std::uniform_real_distribution>;
 
 int main(int argc, char** argv) {
 
@@ -20,10 +20,11 @@ int main(int argc, char** argv) {
     const double k = atof(argv[1]); ///> Threshold value (k is variable name taken from text)
     const int N = atoi(argv[2]);    ///> Number of values in unit interval to generate
 
-    Distribution<double, DIST::UniformReal> distribution(0.0, 1.0, N);
+    REAL_DISTRIBUTION distribution(0.0, 1.0, N);
 
-    auto condition_met = [k](Distribution<double, DIST::UniformReal>& random_Qvals,
-            double& interim_count) -> bool { ///> condition met?
+    auto condition_met = [k](REAL_DISTRIBUTION& random_Qvals,
+            double& interim_count,
+            DRE& dre) -> bool { ///> condition met?
 
         ///> interim_count defaults to 1.0, correct for this problem
 
@@ -40,8 +41,9 @@ int main(int argc, char** argv) {
      * MonteCarloSimulation_alpha is the alpha version of the MonteCarloSimulation class.
      * It now parametrizes the y-axis (2nd template parameter) and has one Distribution.
      */
-    MonteCarloSimulation_alpha<double, double, DIST::UniformReal> monteCarloSimulation(
+    MonteCarloSimulation<double, double, double, std::uniform_real_distribution> monteCarloSimulation(
             10'000'000,
+            1,
             condition_met,
             distribution);
 

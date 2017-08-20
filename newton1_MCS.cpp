@@ -5,38 +5,42 @@
  * \brief Dice Rolling Problem: Expected number of rolls till two consecutive sixes.
  */
 
-#include <val/montecarlo/MonteCarloSim.h>
+#include <val/montecarlo/MonteCarloSim_beta.h>
 #include <val/montecarlo/Chronology.h>
 
-using DIST = DistributionType;
+using INT_X_INT_P_DISTRIBUTION = Distribution<int, int, std::uniform_int_distribution>;
 
 int main() {
 
-    auto condition_met = [](Distribution<int, DIST::UniformIntegral>& pd,
-            Distribution<int, DIST::UniformIntegral>& sd,
-            double& iv) -> bool { ///> condition met?
+    const int nr_events = 1;
+
+    INT_X_INT_P_DISTRIBUTION distribution(1, 6, nr_events);
+
+    auto condition_met = [](INT_X_INT_P_DISTRIBUTION& pd,
+            double& iv,
+            DRE& dre) -> bool { ///> condition met?
 
         int prior_value = pd.events[0];
 
-        pd.reload_random_values();
+        pd.reload_random_values(dre);
 
         iv = 2.0;
 
         while ( !( pd.events[0] == 6 && pd.events[0] == prior_value ) ) {
             prior_value = pd.events[0];
-            pd.reload_random_values();
+            pd.reload_random_values(dre);
             ++iv;
         }
 
         return true;
     };
 
-    MonteCarloSimulation<int, int, DIST::UniformIntegral, DIST::UniformIntegral>
+    MonteCarloSimulation<int, double, int, std::uniform_int_distribution>
             monteCarloSimulation(
             10'000'000,
+            1,
             condition_met,
-            1, 6, 1, 1,
-            1, 6, 1, 2
+            distribution
     );
 
     monteCarloSimulation.change_message("expected number of rolls is = ");
