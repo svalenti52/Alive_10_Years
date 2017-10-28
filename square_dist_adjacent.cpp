@@ -23,6 +23,8 @@ int main(int argc, char** argv)
     StopWatch stopWatch;
 
     for (int ix = 0; ix<nr_trials; ++ix) {
+    
+    	// points on adjacent sides (x,0) and (0,y)
 
         double x = urd(dre);
         double y = urd(dre);

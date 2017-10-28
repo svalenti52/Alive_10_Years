@@ -24,6 +24,8 @@ int main(int argc, char** argv)
     StopWatch stopWatch;
 
     for (int ix = 0; ix<nr_trials; ++ix) {
+    
+        // points on opposite sides (x,0) and (y,1)
 
         double x = urd(dre);
         double y = urd(dre);
