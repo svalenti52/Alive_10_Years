@@ -38,7 +38,7 @@ int main(int argc, char** argv) {
     };
 
     /**
-     * MonteCarloSimulation_alpha is the alpha version of the MonteCarloSimulation class.
+     * MonteCarloSimulation_beta is the beta version of the MonteCarloSimulation class.
      * It now parametrizes the y-axis (2nd template parameter) and has one Distribution.
      */
     MonteCarloSimulation<double, double, double, std::uniform_real_distribution> monteCarloSimulation(

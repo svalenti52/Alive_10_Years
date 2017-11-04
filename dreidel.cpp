@@ -16,7 +16,7 @@ class Dreidel {
     string name;
     int face_nr;
 public:
-    Dreidel(const string &name, int face_nr) : name(name), face_nr(face_nr) {}
+    Dreidel(const string&& name, int face_nr) : name(name), face_nr(face_nr) {}
 
     const string &getName() const {
         return name;
@@ -31,7 +31,7 @@ class Player {
     int id;
     double net;
 public:
-    Player(int i_id) : id(i_id), net(0.0) {}
+    explicit Player(int i_id) : id(i_id), net(0.0) {}
 
     void operator+=(double winnings) { net += winnings; }
 

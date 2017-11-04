@@ -4,6 +4,7 @@ project(Alive_10_Years)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(DREIDEL dreidel.cpp)
+add_executable(DREIDEL_MCS dreidel_mcs.cpp)
 add_executable(BREAKING_STICKS breaking_sticks.cpp)
 add_executable(TWINS twins.cpp)
 add_executable(NEWTON_1 newton1.cpp)
