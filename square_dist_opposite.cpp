@@ -24,11 +24,13 @@ int main(int argc, char** argv)
     StopWatch stopWatch;
 
     for (int ix = 0; ix<nr_trials; ++ix) {
+    
+        // points on opposite sides (x,0) and (a,1)
 
         double x = urd(dre);
-        double y = urd(dre);
+        double a = urd(dre);
 
-        auto diff_squared = (x-y) * (x-y);
+        auto diff_squared = (x-a) * (x-a);
 
         double interim_value = sqrt( 1 + diff_squared );
 
