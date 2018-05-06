@@ -16,7 +16,7 @@ int main() {
 
     INT_X_INT_P_DISTRIBUTION distribution(1, 6, nr_events);
 
-    auto condition_met = [](INT_X_INT_P_DISTRIBUTION& pd,
+    auto condition_met ( [](INT_X_INT_P_DISTRIBUTION& pd,
             double& iv,
             DRE& dre) -> bool { ///> condition met?
 
@@ -33,7 +33,7 @@ int main() {
         }
 
         return true;
-    };
+    } );
 
     MonteCarloSimulation<int, double, int, std::uniform_int_distribution>
             monteCarloSimulation(

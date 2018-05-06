@@ -22,7 +22,7 @@ int main(int argc, char** argv) {
 
     REAL_DISTRIBUTION distribution(0.0, 1.0, N);
 
-    auto condition_met = [k](REAL_DISTRIBUTION& random_Qvals,
+    auto condition_met ( [k](REAL_DISTRIBUTION& random_Qvals,
             double& interim_count,
             DRE& dre) -> bool { ///> condition met?
 
@@ -35,7 +35,7 @@ int main(int argc, char** argv) {
         auto pr = std::minmax_element(random_Qvals.events.begin(), random_Qvals.events.end());
 
         return ( *pr.second / *pr.first ) > k; ///> maximum / minimum > threshold ?
-    };
+    } );
 
     /**
      * MonteCarloSimulation_beta is the beta version of the MonteCarloSimulation class.

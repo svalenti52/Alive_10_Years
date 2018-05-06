@@ -33,7 +33,7 @@ int main(int argc, char** argv)
 
     Histogram<int, int> histogram(2, max_nr_seasons_tracked, 1);
 
-    auto condition_met = [&histogram, max_nr_seasons_tracked](Distribution<int, DIST::UniformIntegral>& pd,
+    auto condition_met ( [&histogram, max_nr_seasons_tracked](Distribution<int, DIST::UniformIntegral>& pd,
             Distribution<int, DIST::UniformIntegral>& latest_three_seasons,
             double& nr_of_seasons) -> bool {
 
@@ -51,7 +51,7 @@ int main(int argc, char** argv)
 
         latest_three_seasons.reload_random_values();
         return true;
-    };
+    } );
 
     MonteCarloSimulation<int, int, DIST::UniformIntegral, DIST::UniformIntegral>
     monteCarloSimulation(1'000'000,

@@ -32,26 +32,26 @@ int main(int argc, char** argv) {
         vector<double> breaks;
         for ( int jx = 0; jx < nr_breaks; ++jx )
             breaks.push_back(urd(dre));
-        breaks.push_back(0.0);
-        breaks.push_back(1.0);
         sort(breaks.begin(), breaks.end());
 
-        for ( int jx = 1; jx < breaks.size(); ++jx) {
+        //for ( int jx = 1; jx < breaks.size(); ++jx) {
+        bool MarksInSameStick = true;
+        for ( auto a_break : breaks)
+        {
 
-            if ( all_of(invis_marks.begin(), invis_marks.end(),
-                    [breaks, jx](double im) -> bool { return im < breaks[jx]; }
-            )) {
-                cumulative_value += 1.0;
+            if ( none_of(invis_marks.begin(), invis_marks.end(),
+                    [a_break](double im) -> bool { return im < a_break; } ))
+                continue;
+            else
+            {
+                MarksInSameStick = all_of(invis_marks.begin(), invis_marks.end(),
+                    [a_break](double im) -> bool { return im < a_break; } );
+
                 break;
             }
-
-            else if ( none_of(invis_marks.begin(), invis_marks.end(),
-                    [breaks, jx](double im) -> bool { return im < breaks[jx]; }
-                ))
-                continue;
-
-            else break;
         }
+        if ( MarksInSameStick )
+            cumulative_value += 1.0;
     }
 
     cout << "Probability is = " << cumulative_value/static_cast<double>(nr_trials) << '\n';
