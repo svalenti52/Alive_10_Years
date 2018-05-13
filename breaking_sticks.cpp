@@ -18,35 +18,44 @@ int main(int argc, char** argv) {
     uniform_real_distribution<double> urd;
     dre.seed(2);
 
+    if (argc != 2)
+    {
+        cout << "Arguments Incorrect... Should be one argument\n";
+        return 1;
+    }
     const int nr_sticks = atoi(argv[1]);
+    if (nr_sticks < 2)
+    {
+        cout << "Argument should be at least two...\n";
+        return 2;
+    }
     const int nr_breaks = nr_sticks - 1;
 
     const int nr_trials = 1'000'000;
 
     double cumulative_value = 0.0;
 
-    for ( int ix = 0; ix < nr_trials; ++ix ) {
-
-        vector<double> invis_marks = { urd(dre), urd(dre)};
+    for ( int ix = 0; ix < nr_trials; ++ix )
+    {
+        vector<double> invisible_marks = { urd(dre), urd(dre)};
 
         vector<double> breaks;
         for ( int jx = 0; jx < nr_breaks; ++jx )
             breaks.push_back(urd(dre));
         sort(breaks.begin(), breaks.end());
 
-        //for ( int jx = 1; jx < breaks.size(); ++jx) {
         bool MarksInSameStick = true;
         for ( auto a_break : breaks)
         {
 
-            if ( none_of(invis_marks.begin(), invis_marks.end(),
+            if ( none_of(invisible_marks.begin(), invisible_marks.end(),
                     [a_break](double im) -> bool { return im < a_break; } ))
                 continue;
+
             else
             {
-                MarksInSameStick = all_of(invis_marks.begin(), invis_marks.end(),
+                MarksInSameStick = all_of(invisible_marks.begin(), invisible_marks.end(),
                     [a_break](double im) -> bool { return im < a_break; } );
-
                 break;
             }
         }

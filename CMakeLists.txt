@@ -1,11 +1,10 @@
 cmake_minimum_required(VERSION 3.7)
 project(Alive_10_Years)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 
 add_executable(DREIDEL dreidel.cpp)
 add_executable(DREIDEL_MCS dreidel_mcs.cpp)
-add_executable(BREAKING_STICKS breaking_sticks.cpp)
 add_executable(TWINS twins.cpp)
 add_executable(NEWTON_1 newton1.cpp)
 add_executable(NEWTON_2 newton2.cpp)
@@ -31,3 +30,5 @@ add_executable(CHALLENGE10 challenge10.cpp)
 add_executable(SQUARE_DIST_ADJACENT square_dist_adjacent.cpp)
 add_executable(SQUARE_DIST_OPPOSITE square_dist_opposite.cpp)
 add_executable(SQUARE_DIST_INTERIOR square_dist_interior.cpp)
+add_executable(BREAKING_STICKS breaking_sticks.cpp)
+add_executable(BREAKING_STICKS_MCS breaking_sticks_MCS.cpp)
