@@ -16,8 +16,8 @@ int main(int argc, char** argv)
         return 1;
     }
 
-    const int nr_invisible_marks = atoi(argv[1]);
-    const int nr_segments = atoi(argv[2]);
+    const auto nr_invisible_marks = static_cast<int>(strtol(argv[1], argv, 10));
+    const auto nr_segments = static_cast<int>(strtol(argv[2], argv, 10));
     if (nr_invisible_marks < 2 || nr_segments < 2)
     {
         std::cout << "Argument should be at least two...\n";
@@ -34,8 +34,8 @@ int main(int argc, char** argv)
             double& iv_y_axis,
             DRE& dre)
             {
-                std::vector<double> iv_marks(nr_invisible_marks, 0.0);
-                std::vector<double> breaks(nr_breaks, 0.0);
+                std::vector<double> iv_marks(static_cast<unsigned>(nr_invisible_marks), 0.0);
+                std::vector<double> breaks(static_cast<unsigned>(nr_breaks), 0.0);
                 for (int ix = 0; ix < nr_invisible_marks; ++ix)
                     iv_marks[ix] = pd.events[ix];
                 for (int ix = 0; ix < nr_breaks; ++ix)
