@@ -6,9 +6,11 @@
 
 int main(int argc, char** argv)
 {
-    if (argc != 3) {"usage: number of patients, number that died"; return 1;}
+    if (argc != 3) {std::cout << "usage: number of patients, number that died\n"; return 1;}
     const int nr_events{static_cast<int>(strtol(argv[1], nullptr, 10))};
     const int nr_dying_threshold{static_cast<int>(strtol(argv[2], nullptr, 10))};
+    if (nr_events < nr_dying_threshold) {std::cout
+                << "usage: number of patients cannot be less than number that died\n"; return 2;}
 
     using DOUBLE_X_INT_U_DISTRIBUTION = Distribution<double, int, std::uniform_real_distribution>;
 
