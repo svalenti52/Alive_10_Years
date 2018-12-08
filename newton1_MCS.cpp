@@ -26,7 +26,7 @@ int main() {
 
         iv = 2.0;
 
-        while ( !( pd.events[0] == 6 && pd.events[0] == prior_value ) ) {
+        while ( !( pd.events[0] == 6 && prior_value == 6 ) ) {
             prior_value = pd.events[0];
             pd.reload_random_values(dre);
             ++iv;
