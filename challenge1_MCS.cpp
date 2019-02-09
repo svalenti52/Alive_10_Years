@@ -19,8 +19,10 @@ int main(int argc, char** argv)
         while (side.events[0] + side.events[1] <= 1.0)
             side.reload_random_values(dre);
 
-        return ( acos( (side.events[0]*side.events[0] + side.events[1] * side.events[1] - 1.0) /
-                ( 2.0 * side.events[0] * side.events[1] ) ) > right_angle_radians );
+//        return ( acos( (side.events[0]*side.events[0] + side.events[1] * side.events[1] - 1.0) /
+//                ( 2.0 * side.events[0] * side.events[1] ) ) > right_angle_radians );
+
+        return (side.events[0]*side.events[0] + side.events[1] * side.events[1] - 1.0) < 0.0;
     });
 
     MonteCarloSimulation<double, double, double, std::uniform_real_distribution>
