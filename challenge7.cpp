@@ -17,9 +17,8 @@ const double pi = 3.1415926536;
 int main(int argc, char** argv)
 {
 
-    default_random_engine dre;
+    default_random_engine dre(1);
     uniform_real_distribution<double> urd(0.0, 2.0 * pi);
-    dre.seed(1);
 
     const int nr_trials = 10'000'000;
 
@@ -31,11 +30,13 @@ int main(int argc, char** argv)
 
         sort(angles.begin(), angles.end());
 
-        if ( angles[0] >= pi || angles[1] <= pi ) continue;
+        if (angles[0]<pi && angles[1]>pi)
+        {
 
-        if ( angles[0] < angles[1] - pi ) continue;
+            if (angles[0]<angles[1]-pi) continue;
 
-        cumulative_value += 1.0;
+            cumulative_value += 1.0;
+        }
     }
 
     cout << "Probability is = " << cumulative_value/static_cast<double>(nr_trials) << '\n';
