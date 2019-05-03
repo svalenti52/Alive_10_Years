@@ -23,7 +23,7 @@ int main(int argc, char** argv) {
         cout << "Arguments Incorrect... Should be one argument\n";
         return 1;
     }
-    const int nr_sticks = atoi(argv[1]);
+    const int nr_sticks = strtol(argv[1], nullptr, 10);
     if (nr_sticks < 2)
     {
         cout << "Argument should be at least two...\n";
