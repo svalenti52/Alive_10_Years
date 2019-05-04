@@ -47,7 +47,12 @@ Challenge Problems
         4. If it did not match the color from step 1, return it to the urn and go to step 1.
     When there is one ball left, what is the probability it is a black ball?
     
-    Problem 11 (Die):
+    Problem 11 (Die): A and B roll a six-sided die with the one first rolling a 1 winning the round.
+    A rolls first by rolling the die once; if A does not win, then B rolls the die once. If B does
+    not win, then A rolls the die twice. If A still has not won, then B rolls the die twice. A and B
+    continue in like fashion, imcrementing the number of consecutive rolls taken by a player after B
+    has rolled and still has not won. What is the probability that A wins?
     
-    Problem 12 (Coefficients):
+    Problem 12 (A^(2/3) + B^(2/3)): Let A and B be chosen randomly from the range -1 to 1.
+    What is the probability that the above function evaluates to less that one?
     
