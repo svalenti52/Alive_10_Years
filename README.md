@@ -24,15 +24,26 @@ Challenge Problems
     What is the probability that they are at least one unit apart?
     
     Problem 7 (3 Points on the Circumference): Select three points on a circle as follows: fix one point on the
-    circumference and distribute the other two at angles A and B from the first point. The angles are taken from the
-    origin relative to the first point. A and B are chosen randomly from the range 0 to 2pi. What is the probability
-    that the origin is contained within the triangle formed from the points on the circumference?
+    circumference and distribute the other two, on the circumference, at angles A and B from the first point. The
+    angles are taken from the origin relative to the first point. Angles A and B are chosen randomly from the range
+    0 to 2pi. What is the probability that the origin is contained within the triangle formed from the points on the
+    circumference?
  
-    Problem 8 (Six Teams):
+    Problem 8 (Six Teams): Six teams, all of equal ability, form a league and play a long series of games against each
+    other each year. How many years must they play until the probability reaches 0.5 that the same team wins 3 years in
+    a row? The same question for 10 teams.
     
-    Problem 9 (Golf):
+    Problem 9 (Golf): A golfer drives a ball onto a square green randomly (equally likly to be anywhere on the green).
+    At the center of the green is the hole. What is the probability that the ball is closer to the hole than an edge of
+    the green?
     
-    Problem 10 (Urn):
+    Problem 10 (Urn): There are b black balls and w white balls in an urn (b, w > 0). The following procedure is
+    executed:
+        1. Draw a ball from the urn, noting its color, and discarding it.
+        2. Draw another ball from the urn.
+        3. If it matched the color from step 1, discard it, and go to step 2.
+        4. If it did not match the color from step 1, return it to the urn and go to step 1.
+    When there is one ball left, what is the probability it is a black ball?
     
     Problem 11 (Die):
     
