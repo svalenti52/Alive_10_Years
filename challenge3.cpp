@@ -13,9 +13,9 @@ using namespace std;
 int main(int argc, char** argv)
 {
 
-    default_random_engine dre;
+    default_random_engine dre(1);
     uniform_real_distribution<double> urd;
-    dre.seed(1);
+    // dre.seed(1);
 
     const int nr_trials = 10'000'000;
 

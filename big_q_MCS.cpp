@@ -17,8 +17,8 @@ using REAL_DISTRIBUTION = Distribution<double, double, std::uniform_real_distrib
 int main(int argc, char** argv) {
 
 
-    const double k = atof(argv[1]); ///> Threshold value (k is variable name taken from text)
-    const int N = atoi(argv[2]);    ///> Number of values in unit interval to generate
+    const double k = strtod(argv[1], nullptr); ///> Threshold value (k is variable name taken from text)
+    const int N = strtol(argv[2], nullptr, 10);    ///> Number of values in unit interval to generate
 
     REAL_DISTRIBUTION distribution(0.0, 1.0, N);
 
@@ -32,9 +32,10 @@ int main(int argc, char** argv) {
          * minmax_element creates a pair composed of the minimum (first) and maximum
          * (second) values.
          */
-        auto pr = std::minmax_element(random_Qvals.events.begin(), random_Qvals.events.end());
 
-        return ( *pr.second / *pr.first ) > k; ///> maximum / minimum > threshold ?
+        auto [ptr_min, ptr_max] = std::minmax_element(random_Qvals.events.begin(), random_Qvals.events.end());
+
+        return ( *ptr_max / *ptr_min ) > k; ///> maximum / minimum > threshold ?
     } );
 
     /**
