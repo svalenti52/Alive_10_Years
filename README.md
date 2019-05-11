@@ -56,3 +56,57 @@ Challenge Problems
     Problem 12 (A^(2/3) + B^(2/3)): Let A and B be chosen randomly from the range -1 to 1.
     What is the probability that the above function evaluates to less that one?
     
+Chapter 1 - Breaking Sticks
+
+    Problem: Make m marks along the length of stick of length 1, distributing the marks randomly along
+    its length.  Then break the stick into n pieces, the breakpoints being distributed randomly along
+    the length of the stick. What is probability that all m marks are contained within the same broken
+    seqment of stick?
+
+Chapter 2 - The Twins
+
+Chapter 3 - Steve's Elevator Problem
+
+Chapter 4 - Three Gambling Problems
+
+Chapter 5 - Big Quotients - Part 1
+
+Chapter 6 - Two Ways to Proofread
+
+Chapter 7 - Chain Letters That Never End
+
+Chapter 8 - Bingo Befuddlement
+
+Chapter 9 - Is Dreidel Fair?
+
+Chapter 10 - Hollywood Thrills
+
+Chapter 11 - The Problem of the n-Liars
+
+Chapter 12 - The Inconvenience of a Law
+
+Chapter 13 - When the Superbowl is a Blowout
+
+Chapter 14 - Darts and Ballistic Missiles
+
+Chapter 15 - Blood Testing
+
+Chapter 16 - Big Quotients - Part 2
+
+Chapter 17 - To Test or Not to Test?
+
+Chapter 18 - Average Distances on a Square
+
+Chapter 19 - When Will the Last One Fail?
+
+Chapter 20 - Who's Ahead?
+
+Chapter 21 - Plum Pudding
+
+Chapter 22 - Ping-Pong and Squash
+
+Chapter 23 - Will You Be Alive 10 Years from Now?
+
+Chapter 24 - Chickens in Boxes
+
+Chapter 25 - Newcomb's Paradox
