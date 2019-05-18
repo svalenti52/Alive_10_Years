@@ -54,7 +54,7 @@ Challenge Problems
     has rolled and still has not won. What is the probability that A wins?
     
     Problem 12 (A^(2/3) + B^(2/3)): Let A and B be chosen randomly from the range -1 to 1.
-    What is the probability that the above function evaluates to less that one?
+    What is the probability that the above function evaluates to less than one?
     
 Chapter 1 - Breaking Sticks
 
@@ -65,11 +65,30 @@ Chapter 1 - Breaking Sticks
 
 Chapter 2 - The Twins
 
+    Problem: A class has 20 students, one set of twins being among them.  If students are assigned
+    randomly into groups of 4 students, what is the probability that the twins are in the same group?
+
 Chapter 3 - Steve's Elevator Problem
+
+    This is the same problem as seen previously in Digital Dice. A complete, general, noncombinatoric
+    analytical solution was presented that had been found by one of his readers.
 
 Chapter 4 - Three Gambling Problems
 
+    Problem 1: For a six sided die, what is the expected number of tosses till two sixes appear on
+    consecutive rolls?
+    
+    Problem 2: What is the probability of throwing 4 heads before 7 tails? The fairness of the coin
+    can be varied.
+    
+    Problem 3: Players A, B, and C toss a fair die. They toss in the order A, B, C, then repeating.
+    The player that throws a six drops out. This continues till there is one player left. What is the
+    probability that A, then subsequently B throw sixes? Same question for B, then A.
+
 Chapter 5 - Big Quotients - Part 1
+
+    Problem: Choose two numbers at random from the unit interval. What is the probablity that
+    the ratio of the larger number to the smaller is greater that a given number?
 
 Chapter 6 - Two Ways to Proofread
 
@@ -92,6 +111,9 @@ Chapter 14 - Darts and Ballistic Missiles
 Chapter 15 - Blood Testing
 
 Chapter 16 - Big Quotients - Part 2
+
+    Problem: When choosing a set of N randomly chosen numbers from the unit interval, then selecting
+    the maximum and minimum, what is the probability that the ratio maximum/minimum will exceed a value k?
 
 Chapter 17 - To Test or Not to Test?
 

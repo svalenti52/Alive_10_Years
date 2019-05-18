@@ -17,10 +17,8 @@ using namespace std;
 int main(int argc, char** argv)
 {
 
-    default_random_engine dre;
+    default_random_engine dre(4);
     uniform_real_distribution<double> urd;
-
-    dre.seed(4);
 
     const int nr_trials = 10'000'000;
 
@@ -30,7 +28,7 @@ int main(int argc, char** argv)
 
     for ( int ix = 0; ix < nr_trials; ++ix ) {
 
-        random_shuffle(students.begin(), students.end());
+        shuffle(students.begin(), students.end(), dre);
 
         for ( int jx = 0; jx < 20; jx += 4 )
             if ( any_of(students.begin()+jx, students.begin()+jx+4, [](int i) {return i == 1;}) &&

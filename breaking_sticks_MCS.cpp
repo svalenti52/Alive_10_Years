@@ -44,14 +44,14 @@ int main(int argc, char** argv)
                 std::sort(breaks.begin(), breaks.end());
 
                 bool AllMarksOnSameSegment = true;
-                for (auto brks : breaks)
+                for (auto segment : breaks)
                 {
-                    if (std::none_of(iv_marks.begin(), iv_marks.end(), [brks](auto marks) {return marks < brks;}))
+                    if (std::none_of(iv_marks.begin(), iv_marks.end(), [segment](auto marks) {return marks < segment;}))
                         continue;
                     else
                     {
                         AllMarksOnSameSegment = std::all_of(iv_marks.begin(), iv_marks.end(),
-                                [brks](auto marks) { return marks < brks; });
+                                [segment](auto marks) { return marks < segment; });
                         break;
                     }
                 }
