@@ -12,7 +12,7 @@
 
 using namespace std;
 
-const double pi = 3.1415926536;
+const double pi = M_PI;
 
 int main(int argc, char** argv)
 {

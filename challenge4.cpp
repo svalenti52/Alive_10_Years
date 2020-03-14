@@ -12,7 +12,7 @@
 
 using namespace std;
 
-const double right_angle_radians = 3.1415926536 / 2.0;
+const double right_angle_radians = M_PI_2;
 
 int main(int argc, char** argv)
 {

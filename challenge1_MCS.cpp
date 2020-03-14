@@ -14,7 +14,7 @@ int main(int argc, char** argv)
 
     auto condition_met([](REAL_X_REAL_P_DISTRIBUTION& side, double& nr_obtuse_triangles, DRE& dre)
     {
-        const double right_angle_radians = 3.1415926536 / 2.0;
+        const double right_angle_radians = M_PI_2;
 
         while (side.events[0] + side.events[1] <= 1.0)
             side.reload_random_values(dre);
