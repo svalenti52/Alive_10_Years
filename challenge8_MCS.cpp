@@ -66,7 +66,7 @@ int main(int argc, char** argv)
 
     stopWatch.stop();
 
-    monteCarloSimulation.print_result();
+    // monteCarloSimulation.print_result();
 
     cout << "Approximate location of 50% probability at "
          << histogram.get_midpoint() << " seasons\n";
