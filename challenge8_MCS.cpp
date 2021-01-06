@@ -15,7 +15,6 @@
 #include <fstream>
 #include <random>
 #include <val/montecarlo/Histogram.h>
-#include <deque>
 #include <val/montecarlo/MonteCarloSim.h>
 #include <val/montecarlo/Chronology.h>
 
