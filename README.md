@@ -102,6 +102,13 @@ Chapter 10 - Hollywood Thrills
 
 Chapter 11 - The Problem of the n-Liars
 
+    Problem: Given that n people tell the truth with a common probability p, what is the 
+    probability that something told to a chain of them individually, secretly, and with
+    probabilities of truth being independent for each one, that the original message comes
+    out? The "chain" refers to them being in a line, the first one told secretly the message,
+    the first then secretly telling the second, and so on. The possibilities for the message
+    are greatly simplified by allowing it to be "yes" or "no" only.
+
 Chapter 12 - The Inconvenience of a Law
 
 Chapter 13 - When the Superbowl is a Blowout
