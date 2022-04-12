@@ -7,13 +7,9 @@
 //
 
 #include <iostream>
-#include <random>
-#include <algorithm>
 #include <functional>
-//#include <Eigen/Dense>
 
 using namespace std;
-//using namespace Eigen;
 
 class BingoCard {
     vector<pair<int, bool>> card;
@@ -33,10 +29,10 @@ public:
 
 public:
     BingoCard(int f, int s, int t, int ft) : bingo(false) {
-        card.push_back(make_pair(f, false));
-        card.push_back(make_pair(s, false));
-        card.push_back(make_pair(t, false));
-        card.push_back(make_pair(ft, false));
+        card.emplace_back(make_pair(f, false));
+        card.emplace_back(make_pair(s, false));
+        card.emplace_back(make_pair(t, false));
+        card.emplace_back(make_pair(ft, false));
     }
 
     void is_matching(int n) {
@@ -53,19 +49,14 @@ public:
 int main(int argc, char** argv)
 {
 
-    default_random_engine dre;
-    uniform_real_distribution<double> urd;
-
-    dre.seed(4);
-
     int nr_A_wins = 0;
     int nr_B_wins = 0;
 
     vector<BingoCard> cards;
-    //cards.push_back(BingoCard(1,2,3,4));
-    cards.push_back(BingoCard(2,4,5,6));
-    cards.push_back(BingoCard(1,3,4,5));
-    //cards.push_back(BingoCard(1,5,2,6));
+    cards.emplace_back(BingoCard(1,2,3,4));
+    //cards.emplace_back(BingoCard(2,4,5,6));
+    //cards.emplace_back(BingoCard(1,3,4,5));
+    cards.emplace_back(BingoCard(1,5,2,6));
 
     vector<int> vec_bingo = { 1, 2, 3, 4, 5, 6 };
 

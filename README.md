@@ -98,7 +98,24 @@ Chapter 8 - Bingo Befuddlement
 
 Chapter 9 - Is Dreidel Fair?
 
+    Problem: The ancient Jewish game of dreidel is played with a four-sided top where each of the sides
+    is marked with one of the Hebrew letters Nun (N), Gimel (G), Hay (H), and Shin (S). Players first
+    contribute one unit of money to the pot, then take turns spinning the dreidel in sequence, with the side
+    showing determining the outcome of that players turn:
+    - N - nothing happens
+    - H - receives half of the pot
+    - G - receives all of the pot
+    - S - contribute another unit to the pot
+    Assume that the dreidel is fair.  Does the first player have an advantage/disadvantage over the other
+    players? What is the average winnings of all the players?
+
 Chapter 10 - Hollywood Thrills
+    
+    Problem - Given a disease that has a 2/3 mortality rate and two drugs to treat it with (A & B),
+    suppose that A and B have the following trial results:
+    - A - out of 5 infected, 0 die
+    - B - out of 12 infected, 3 die
+    Which drug is the more effective?
 
 Chapter 11 - The Problem of the n-Liars
 
